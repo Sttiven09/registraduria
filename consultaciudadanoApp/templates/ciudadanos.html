@@ -13,12 +13,12 @@
         <div class="card-body">    
         <h4 class="card-title">{{ciudadano.nombres}} {{ciudadano.apellidos}}</h4>
         <p class="card-text" >Documento identidad: {{ciudadano.identificacion}}</p>
-        <p class="card-text">Lugar de Expedición: {{ciudadano.fechadeexpedicion}}</p>
         <p class="card-text">Fecha de Nacimimento: {{ciudadano.fechadenacimiento}}</p>
+        <p class="card-text">Fecha de Expedición: {{ciudadano.fechadeexpedicion}}</p>
         <p class="card-text">Lugar de Nacimimento: {{ciudadano.lugardenacimiento}}</p>
         <p class="card-text">Estatura: {{ciudadano.estatura}}</p>
-        <p class="card-text">{{ciudadano.id_rh}}</p>
-        <p class="card-text">{{ciudadano.id_estado}}</p>
+        <p class="card-text">Tipo de Sangre: {{ciudadano.id_rh}}</p>
+        <p class="card-text">Estado del Ciudadano{{ciudadano.id_estado}}</p>
         </div>
     </div>
     {% endfor %}
