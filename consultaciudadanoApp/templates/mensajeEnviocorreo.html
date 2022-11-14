@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container py-5">
+    <div>
+        <form method="POST" class="card card-body">
+    
+            <br>
+            <br>
+            <br>
+            {{error}}
+            {% csrf_token %}
+            
+            <div class="mb-3">
+                <p>
+                    <h4 class="text-center">  Por favor revise su correo electrónico, allí encontrara todas las instrucciones para restablecer su contraseña. </h4>
+                </p>
+                
+                <br>
+                
+                
+                <p>
+                    <h5 class="text-center"> Gracias. </h5>
+                </p>
+            </div>
+            <br>
+            <br>
+            <br>
+            
+        </form>
+    </div>    
+
+
+</main>
+
+
+{% endblock %}

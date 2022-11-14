@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container py-5">
+    <div>
+        <form method="POST" class="card card-body needs-validation" novalidate>
+            <br>
+            <br>
+            <h1 class="display-3 text-center">Envio correo cambio contraseña</h1>
+            <br>
+            <br>
+            {{error}}
+            {% csrf_token %}
+            
+            <div class="mb-3">
+                <label for="email">Correo Electronico:</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Ingrese su correo electronico" required>
+                <div class="invalid-feedback">
+                    Proporciona Correo Electronico.
+                </div>
+            </div>
+            <br>
+            <br>
+            <button class="btn btn-dark">
+                Enviar
+            </button>
+            <br>
+            <br>
+        </form>
+    </div>    
+
+<script>
+        // Ejemplo de JavaScript inicial para deshabilitar el envío de formularios si hay campos no válidos
+        (function () {
+            'use strict'
+        
+          // Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
+            var forms = document.querySelectorAll('.needs-validation')
+        
+          // Bucle sobre ellos y evitar el envío
+            Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+        
+                form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+        
+</script>
+
+</main>
+
+
+{% endblock %}

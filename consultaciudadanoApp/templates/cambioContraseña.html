@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container py-5">
+    <div>
+        <form method="POST" class="card card-body">
+    
+            <h1 class="display-1 text-center">Cambio exitoso</h1>
+            <br>
+            <br>
+            {{error}}
+            {% csrf_token %}
+            
+            <div class="mb-3">
+                <p class="login-box-msg text-center">Su contraseña ha sido establecida. Ahora puede continuar e iniciar sesión.</p>
+            </div>
+            
+            <br>
+            <br>
+                        
+            
+        </form>
+    </div>    
+
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container py-5">
+    <div>
+        <form action="/ciudadanos/crear/" method="POST" class="card card-body needs-validation" novalidate>
+            
+            <h1 class="display-1 text-center">Registrar ciudadanos</h1>
+            
+            {{error}}
+            {% csrf_token %}
+            
+            <div class="mb-3" >
+                <label for="id_identificacion">Identificación:</label>
+                <input type="number" name="identificacion" id="id_identificacion" class="form-control" placeholder="Documento de identidad"  required>
+                <div class="invalid-feedback">
+                    Proporciona una identificación valida.
+                </div>
+            </div>
+            
+            
+            <div class="mb-3">
+                <label for="id_nombres">Nombres:</label>
+                <textarea name="nombres" id="id_nombres" class="form-control"cols="1" rows="1" class="form-control "  placeholder="Digite su nombre" required></textarea>
+                <div class="invalid-feedback">
+                    Digite un Nombre valido.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="id_apellidos">Apellidos:</label>
+                <textarea cols="1" rows="1" name="apellidos" id="id_apellidos" class="form-control" class="form-control "  placeholder="Ingrese sus apellidos" required></textarea>
+                <div class="invalid-feedback">
+                    Digite un Apellido valido.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="id_fechadenacimiento">Fecha de Nacimiento:</label>
+                <input type="date" name="fechadenacimiento" id="id_fechadenacimiento" class="form-control" required>
+                <div class="invalid-feedback">
+                    Digite una fecha valida.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="id_lugardenacimiento">Lugar de Nacimiento:</label>
+                <textarea cols="1" rows="1" name="lugardenacimiento" id="id_lugardenacimiento" class="form-control" placeholder="Ingrese su lugar de nacimiento" class="form-control " required></textarea>
+                <div class="invalid-feedback">
+                    Digite un lugar de nacimiento valido.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="id_fechadeexpedicion">Fecha de expedición:</label>
+                <input type="date" name="fechadeexpedicion" id="id_fechadeexpedicion" class="form-control" required>
+                <div class="invalid-feedback">
+                    Digite una fecha valida.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="id_lugardeexpedicion">Lugar de expedición:</label>
+                <textarea cols="1" rows="1" name="lugardeexpedicion" id="id_lugardeexpedicion" class="form-control" placeholder="Ingrese el lugar de expedición del documento" class="form-control " required></textarea>
+                <div class="invalid-feedback">
+                    Digite una fecha de expedición valido.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="id_estatura">Estatura:</label>
+                <input type="number" name="estatura" id="id_estatura" class="form-control" placeholder="Digite su estatura" required>
+                <div class="invalid-feedback">
+                    Digite una estatura valida.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="id_id_rh" required>Tipo de sangre:</label>
+                <select class="form-select" required name="id_rh" id="id_id_rh" class="form-control is-invalid" >
+                    <option value="" selected="">---------</option>
+                    <option value="1">Tipo Sangre: O+</option>
+                    <option value="2">Tipo Sangre: O-</option>
+                    <option value="3">Tipo Sangre: A+</option>
+                    <option value="4">Tipo Sangre: A-</option>
+                    <option value="5">Tipo Sangre: B+</option>
+                    <option value="6">Tipo Sangre: B-</option>
+                    <option value="7">Tipo Sangre: AB+</option>
+                    <option value="8">Tipo Sangre: AB-</option>
+                </select>
+                <div class="invalid-feedback">
+                    Seleccione un tipo de sagre valido.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="id_id_estado">Estado:</label>
+                <select class="form-select" required name="id_estado" id="id_id_estado" >
+                    <option value="" selected="">---------</option>
+                    <option value="1">Requerido</option>
+                    <option value="2">No Requerido</option>
+                </select>
+                <div class="invalid-feedback" >
+                    Seleccione un Estado valido.
+                </div>
+            </div>
+            
+            <button class="btn btn-dark">
+                Crear
+            </button>
+        </form>
+    </div>    
+    
+</main>
+
+
+<SCript>
+    // Ejemplo de JavaScript inicial para deshabilitar el envío de formularios si hay campos no válidos
+    (function () {
+        'use strict'
+    
+      // Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
+        var forms = document.querySelectorAll('.needs-validation')
+    
+      // Bucle sobre ellos y evitar el envío
+        Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+    
+            form.classList.add('was-validated')
+            }, false)
+        })
+    })()
+    
+    </SCript>
+
+<!-- formulario sin CSS 
+
+<form action="/ciudadanos/crear/" method="POST">
+    
+    {{error}}
+    
+    {% csrf_token %}
+    
+    {{form.as_p}}
+
+    <button>
+        Crear
+    </button>
+-->
+{% endblock %}

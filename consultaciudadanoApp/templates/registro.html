@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container py-5">
+    <div>
+        <form action="/registro/" method="POST" class="card card-body  needs-validation" novalidate>
+    
+            <h1 class="display-1 text-center">Registrarse</h1>
+            
+            
+            {{error}}
+                        
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label for="usermane">Identificación:</label>
+                <input type="number" name="username" id="username" class="form-control" placeholder="identificación" required>
+                <div class="invalid-feedback">
+                    Proporciona una identificación valida.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="first_name">Nombre:</label>
+                <input type="text" name="first_name" id="first_name" class="form-control" placeholder="Ingrese su nombre" required>
+                <div class="invalid-feedback">
+                    Proporciona un nombre valido.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="last_name">Apellidos:</label>
+                <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Ingrese sus apellidos"required>
+                <div class="invalid-feedback">
+                    Proporciona apellidos validos.
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="id_id_estado">Fuerza Publica:</label>
+                <select class="form-select" required name="id_estado" id="id_id_estado" >
+                    <option value="" selected="">---------</option>
+                    <option value="1">Policía</option>
+                    <option value="2">Ejército</option>
+                    <option value="3">Armada</option>
+                    <option value="4">Fuerza Aérea</option>
+                </select>
+                
+                <div class="invalid-feedback">
+                    Proporciona una fuerza militar valida.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="id_id_estado">Fuerza Publica:</label>
+                <select class="form-select" required name="id_estado" id="id_id_estado" >
+                    <option value="" selected="">---------</option>
+                    <option value="1">Teniente</option>
+                    <option value="2">Capitán</option>
+                    <option value="3">Mayor</option>
+                    <option value="4">Teniente coronel</option>
+                    <option value="5">Coronel</option>
+                </select>
+                <div class="invalid-feedback" >
+                    Seleccione un rango valido.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="email">Correo Electronico:</label>
+                <input type="email" name="email" id="id_email" class="form-control" placeholder="correo@fuerzamilitar.org" required>
+                <div class="invalid-feedback">
+                    Proporciona un correo electronico valido.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="password1">Contraseña:</label>
+                <input type="password" name="password1" id="password1" class="form-control" placeholder="Ingrese su contraseña" required>
+                <div class="invalid-feedback">
+                    Proporciona una contraseña valida.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="password2">Confirme su contraseña:</label>
+                <input type="password" name="password2" id="password2" class="form-control" placeholder="Ingrese nuevamente su contraseña" required>
+                <div class="invalid-feedback">
+                    Proporciona una contraseña valida.
+                </div>
+            </div>
+            
+            
+            
+            
+            <button class="btn btn-dark">
+                Registrarse
+            </button>
+        </form>
+    </div>    
+
+<script>
+        // Ejemplo de JavaScript inicial para deshabilitar el envío de formularios si hay campos no válidos
+        (function () {
+            'use strict'
+        
+          // Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
+            var forms = document.querySelectorAll('.needs-validation')
+        
+          // Bucle sobre ellos y evitar el envío
+            Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+        
+                form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+        
+</script>
+
+</main>
+
+
+{% endblock %}

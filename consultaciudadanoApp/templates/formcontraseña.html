@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container py-5">
+
+    <div>
+        <form  method="POST" class="card card-body needs-validation" novalidate>
+    
+            <h1 class="display-1 text-center">Cambio Contraseña</h1>
+            {% csrf_token %}
+            <br>
+            <br>
+            
+            <div class="mb-3">
+            <label for="id_new_password1">Contraseña Nueva:</label>
+            <input type="password" name="new_password1" class="form-control" placeholder="Contraseña nueva" required="">
+            <div class="invalid-feedback">
+                Proporciona una contraseña valida.
+            </div>
+            </div>
+            <div class="mb-3">
+                <label for="id_new_password2">Confirme su Contraseña Nueva:</label>
+                <div class="input-group mb-3">
+                    <input type="password" name="new_password2" class="form-control" placeholder="Contraseña nueva (confirmación)" required="">
+                    <div class="invalid-feedback">
+                        Proporciona una contraseña valida.
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+                        
+            <div class="col-12">
+                <button type="submit" class="btn btn-dark">
+                    Cambiar mi contraseña
+                </button>
+            </div>
+    </div>
+            
+            
+        </form>
+    </div>    
+
+<script>
+        // Ejemplo de JavaScript inicial para deshabilitar el envío de formularios si hay campos no válidos
+        (function () {
+            'use strict'
+        
+          // Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
+            var forms = document.querySelectorAll('.needs-validation')
+        
+          // Bucle sobre ellos y evitar el envío
+            Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+        
+                form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+        
+</script>
+
+</main>
+
+
+{% endblock %}
+
+
+
