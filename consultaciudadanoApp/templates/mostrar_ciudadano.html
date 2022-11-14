@@ -7,10 +7,10 @@
     <div class="card-header text-bg-dark p-3 mb-2 py-2">
     Información ciudadano
     </div>
-    {% for ciudadano in ciudadanos %}
+    
     <div class="card-body">    
-    <h4 class="card-title" id="nombre">{{ciudadano.nombres}} {{ciudadano.apellidos}}</h4>
-    <p class="card-text" id="identificacion">Documento identidad: {{ciudadano.identidicacion}}</p>
+    <p class="card-title">Nombre: {{ciudadano.nombres}} {{ciudadano.apellidos}}</p>
+    <p class="card-text" >Documento identidad: {{ciudadano.identificacion}}</p>
     <p class="card-text" id="fechadeexpedicion" >Fecha de Expedición: {{ciudadano.fechasdeexpedicion}}</p>
     <p class="card-text" id="fechadenacimiento">Fecha de Nacimimento: {{ciudadano.fechadenacimiento}}</p>
     <p class="card-text" id="lugardenacimiento" >Lugar de Nacimimento: {{ciudadano.lugardenacimiento}}</p>
@@ -18,7 +18,7 @@
     <p class="card-text" id="rh" > Tipo de sagre: {{ciudadano.id_rh}}</p>
     <p class="card-text" id="estado">Estado Ciudadano: {{ciudadano.id_estado}} </p>
     </div>
-    {% endfor %}
+    
 </div>
 </main>
 {% endblock %}
