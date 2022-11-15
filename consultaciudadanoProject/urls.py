@@ -48,7 +48,7 @@ urlpatterns = [
     path('buscar/Usuario/cambiocontraseña/', auth_views.PasswordResetView.as_view(template_name="ingresarcorreo.html"), name = "password_reset"),
     path('mensaje/cambiocontraseña/',auth_views.PasswordResetDoneView.as_view(template_name="mensajeEnviocorreo.html") , name = "password_reset_done"),
     path('cambio/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name="formcontraseña.html"), name = "password_reset_confirm"),
-    path('password_reset_complete/', auth_views.PasswordResetCompleteView.as_view(template_name="cambiocontraseña.html"), name = "password_reset_complete"),
+    path('cambio/verificado/', auth_views.PasswordResetCompleteView.as_view(template_name="cambiocontraseña.html"), name = "password_reset_complete"),
     
     path('api/', include(router_ciudadanos.urls)),
 ]
