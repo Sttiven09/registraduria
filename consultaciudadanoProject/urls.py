@@ -12,7 +12,7 @@ from consultaciudadanoApp.views import crearCiudadanosView
 from consultaciudadanoApp.views import buscarCiudadanoView
 from consultaciudadanoApp.views import bienvenidaView
 from consultaciudadanoApp.views import consultarUsuario
-from consultaciudadanoApp.views import generarPDF
+#from consultaciudadanoApp.views import generarPDF
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
