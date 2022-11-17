@@ -3,6 +3,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User 
 from django.contrib.auth import login
 from django.db import IntegrityError
+from django.contrib.auth.decorators import login_required
+
+@login_required
 
 
 
