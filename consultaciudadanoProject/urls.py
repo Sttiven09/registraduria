@@ -29,7 +29,7 @@ urlpatterns = [
     path('registro/', registro.ingresar, name = "registro"),
     path('iniciarsesion/',inicioSesionView.iniciarSesion , name = "iniciarsesion"),
     path('cerrarsesion/',pagCerrarSesionView.cerrar , name = "cerrarsesion"),
-    path('generarpdf/',generarPDF.generarPDF.as_view() , name = "generarpdf"),
+    #path('generarpdf/',generarPDF.generarPDF.as_view() , name = "generarpdf"),
 
     path('buscar/Usuario/cambiocontraseña/', auth_views.PasswordResetView.as_view(template_name="ingresarcorreo.html"), name = "password_reset"),
     path('mensaje/cambiocontraseña/',auth_views.PasswordResetDoneView.as_view(template_name="mensajeEnviocorreo.html") , name = "password_reset_done"),

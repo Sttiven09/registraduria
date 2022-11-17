@@ -11,18 +11,15 @@ from django.contrib.staticfiles import finders
 
 @login_required
 class generarPDF(View):
-    def get(self, *args, **kwargs):
-        
         template = get_template('ciudadanos.html')
-        context = {
-            'ciudadanos': Ciudadanos.objects.all(),
-            
-            }
-        html = template.render(context)
-        response = HttpResponse(content_type='application/pdf')
-        #response['Content-Disposition'] = 'attachment; filename="reporte.pdf"'
-        pisa_status = pisa.CreatePDF(html, dest=response)
-        if pisa_status.err:
-            return HttpResponse('err' + html + '</pre>')
-        return response
-
+#        context = {
+#            'ciudadanos': Ciudadanos.objects.all(),
+#            
+#            }
+#        html = template.render(context)
+#        response = HttpResponse(content_type='application/pdf')
+#        #response['Content-Disposition'] = 'attachment; filename="reporte.pdf"'
+#        pisa_status = pisa.CreatePDF(html, dest=response)
+#        if pisa_status.err:
+#            return HttpResponse('err' + html + '</pre>')
+#        return response
