@@ -3,22 +3,22 @@
 {% block content %}
 
 <main class="container py-5">
-<div class="card py-4">
-    <div class="card-header text-bg-dark p-3 mb-2 py-2">
-    Información ciudadano
-    </div>
+    <div class= "card card-body py-4">
+        <div class="card-header text-bg-dark p-3 mb-2 py-2">
+            Información ciudadano
+        </div>
     
     <div class="card-body">    
-    <p class="card-title">Nombre: {{ciudadano.nombres}} {{ciudadano.apellidos}}</p>
-    <p class="card-text" >Documento identidad: {{ciudadano.identificacion}}</p>
-    <p class="card-text" id="fechadeexpedicion" >Fecha de Expedición: {{ciudadano.fechasdeexpedicion}}</p>
-    <p class="card-text" id="fechadenacimiento">Fecha de Nacimimento: {{ciudadano.fechadenacimiento}}</p>
-    <p class="card-text" id="lugardenacimiento" >Lugar de Nacimimento: {{ciudadano.lugardenacimiento}}</p>
-    <p class="card-text" id="estatura">Estatura: {{ciudadano.estatura}}</p>
-    <p class="card-text" id="rh" > Tipo de sagre: {{ciudadano.id_rh}}</p>
-    <p class="card-text" id="estado">Estado Ciudadano: {{ciudadano.id_estado}} </p>
+        <p class="card-title">Nombre: {{ciudadano.nombres}} {{ciudadano.apellidos}}</p>
+        <p class="card-text" >Documento identidad: {{ciudadano.identificacion}}</p>
+        <p class="card-text" id="fechadeexpedicion" >Fecha de Expedición: {{ciudadano.fechasdeexpedicion}}</p>
+        <p class="card-text" id="fechadenacimiento">Fecha de Nacimimento: {{ciudadano.fechadenacimiento}}</p>
+        <p class="card-text" id="lugardenacimiento" >Lugar de Nacimimento: {{ciudadano.lugardenacimiento}}</p>
+        <p class="card-text" id="estatura">Estatura: {{ciudadano.estatura}}</p>
+        <p class="card-text" id="rh" > Tipo de sagre: {{ciudadano.id_rh}}</p>
+        <p class="card-text" id="estado">Estado Ciudadano: {{ciudadano.id_estado}} </p>
     </div>
     
-</div>
+    </div>
 </main>
 {% endblock %}
