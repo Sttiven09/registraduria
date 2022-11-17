@@ -4,7 +4,7 @@
 <main class="container py-5">
 <h1 class="display-2 text-center">Ciudadanos</h1>
 
-<ul>
+
     {% for ciudadano in ciudadanos %}
     <div class= "card card-body py-4">
         <div class="card-header text-bg-dark p-3 mb-2 py-2">
@@ -13,15 +13,19 @@
         <div class="card-body">    
         <h4 class="card-title">{{ciudadano.nombres}} {{ciudadano.apellidos}}</h4>
         <p class="card-text" >Documento identidad: {{ciudadano.identificacion}}</p>
+        <p class="card-text">Lugar de Expedición: {{ciudadano.fechadeexpedicion}}</p>
         <p class="card-text">Fecha de Nacimimento: {{ciudadano.fechadenacimiento}}</p>
-        <p class="card-text">Fecha de Expedición: {{ciudadano.fechadeexpedicion}}</p>
         <p class="card-text">Lugar de Nacimimento: {{ciudadano.lugardenacimiento}}</p>
         <p class="card-text">Estatura: {{ciudadano.estatura}}</p>
-        <p class="card-text">Tipo de Sangre: {{ciudadano.id_rh}}</p>
-        <p class="card-text">Estado del Ciudadano: {{ciudadano.id_estado}}</p>
+        <p class="card-text">{{ciudadano.id_rh}}</p>
+        <p class="card-text">{{ciudadano.id_estado}}</p>
         </div>
     </div>
+    <br>
     {% endfor %}
-</ul>
+    <br>
+    <a href="/generarpdf/" class="btn btn-dark"  target="_blank">Generar Reporte</a>
+    
+
 </main>
 {% endblock %}
