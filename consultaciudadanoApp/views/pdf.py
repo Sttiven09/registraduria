@@ -21,7 +21,6 @@ class generarPDF(View):
         response = HttpResponse(content_type='application/pdf')
         #response['Content-Disposition'] = 'attachment; filename="reporte.pdf"'
         pisa_status = pisa.CreatePDF(html, dest=response)
-        if pisa_status.err:
-            return HttpResponse('err' + html + '</pre>')
+        
         return response
 
