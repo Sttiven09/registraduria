@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 from datetime import timedelta
 import os
-import dj_database_url
+#import dj_database_url
 
 
 
@@ -248,24 +248,24 @@ WSGI_APPLICATION = 'consultaciudadanoProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-#DATABASES = {
-#'default': {
-#'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#'NAME': 'd4r29un4sevln3',
-#'USER': 'ecqccsyqmvhwoy',
-#'PASSWORD': '800dfd6830948427296bc991a1e076f302df7aafd60760e3b6853787d7ca4ba3',
-#'HOST': 'ec2-52-1-17-228.compute-1.amazonaws.com',
-#'PORT': '', #05432
-#}
-#}
-
 DATABASES = {
-    'default': dj_database_url.config(
-        # Feel free to alter this value to suit your needs.
-        default='postgresql://postgres:postgres@localhost:5432/mysite',
-        conn_max_age=600
-    )
+'default': {
+'ENGINE': 'django.db.backends.postgresql_psycopg2',
+'NAME': 'consultaciudadano',
+'USER': 'consultaciudadano_user',
+'PASSWORD': 'OKcjhpdTEMm0DE8iQxf5WAZvhkugCDCW',
+'HOST': 'dpg-cdm97vla499enactch00-a',
+'PORT': '5432', #05432
 }
+}
+
+#DATABASES = {
+#    'default': dj_database_url.config(
+#        # Feel free to alter this value to suit your needs.
+#        default='postgresql://postgres:postgres@localhost:5432/mysite',
+#        conn_max_age=600
+#    )
+#}
 
 
 
