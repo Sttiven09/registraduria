@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 from datetime import timedelta
 import os
-import dj_database_url
+#import dj_database_url
 
 
 
@@ -255,7 +255,8 @@ WSGI_APPLICATION = 'consultaciudadanoProject.wsgi.application'
 #'USER': 'consultaciudadano_user',
 #'PASSWORD': 'OKcjhpdTEMm0DE8iQxf5WAZvhkugCDCW',
 #'HOST': 'dpg-cdm97vla499enactch00-a',
-#'PORT': '5432', #05432
+#'HOST': 'ec2-52-1-17-228.compute-1.amazonaws.com',
+#'PORT': '', #05432
 #}
 #}
 
